@@ -120,3 +120,7 @@ node_modules/
 
 # poetry
 poetry.lock
+
+
+#Mac DS Store
+.DS_Store
