@@ -8,7 +8,6 @@ from pythonic_garage_band.band import (
     Drummer,
 )
 
-
 @pytest.mark.skip("todo")
 def test_guitarist_str():
     joan = Guitarist("Joan Jett")
@@ -106,7 +105,6 @@ def test_individual_solos(one_band):
 
 @pytest.mark.skip("todo")
 def test_band_members(one_band):
-
     assert len(one_band.members) == 3
 
     assert isinstance(one_band.members[0], Musician)

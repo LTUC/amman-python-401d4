@@ -34,14 +34,14 @@ class LinkedList:
         """
         Adds a node of a value to the end of LL
         """
-        node = Node(value)
+        node = Node(value) # node.next is None
         if not self.head:
             self.head = node
         else:
             current = self.head
             while current.next != None:
                 current = current.next
-            current.next = node
+            current.next = node # previous-node.next is now our new node
 
 
     def include(self, value):
@@ -57,9 +57,18 @@ class LinkedList:
         pass
 
     def __repr__(self):
-        pass
-
-    
+        # head -> node1 -> node2 -> node3 -> etc .... -> None
+        # val1 - val2 - val3
+        output = ""
+        current = self.head
+        while current:
+            value = current.value
+            if current.next is None:
+                output += f"{value}"
+                break
+            output = output + f"{value} - "
+            current=current.next
+        return output
 
 
 if __name__ == "__main__":
@@ -80,9 +89,18 @@ if __name__ == "__main__":
     print(ll.head.value)
     print(ll.head.next.value)
     print(ll.head.next.next.value)
+    print(ll.__repr__())
 
 
 
     
+"""Insert
+    ll: head -> node(6) -> node('g') -> None
+    ll.insert(17):    head -> node(17) -> node(6) -> node('g') -> None
+"""
 
+"""Big-O
+Append: O(n)
+Insert: O(1)
+"""
 
