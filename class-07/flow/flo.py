@@ -5,7 +5,7 @@ from game_of_greed_2.game import Game
 class Flo:
 
     PROMPTS = (
-        "Wanna play?",
+        "Wanna play? ",
         "(r)oll again, (b)ank your points or (q)uit ",
         "Enter dice to keep (no spaces), or (q)uit: ",
     )
