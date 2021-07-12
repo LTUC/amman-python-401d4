@@ -1,59 +1,42 @@
-# Lab: DjangoX
+# Lab: Django Custom User
 
 ## Overview
 
-It is quite common to set up your Django projects the same way every time.
+Django does a great job at allowing to get started with a solid foundation. But a foundation is just the beginning. We still need to "build the house."
 
-Some of those common tasks are...
+One of the first things many developers need to do is have a custom user.
 
-- Create a custom user
-- Configure static assets
-- Add authentication
-- Set up styling
-- Install common libraries
-- Wire up 3rd party development tools
-
-Repeating these steps over and over violates the DRY (Don't Repeat Yourself) rule. So pro developers usually create a skeleton application they use to start off their projects.
-
-Luckily for us, there's already a great example of such a skeleton - [DjangoX](https://github.com/wsvincent/djangox){:target="_blank"}
+For this lab you'll build your application from the very beginning with a Custom User model.
 
 ## Feature Tasks and Requirements
 
-- Create a website using DjangoX as a template.
-  - Click the `Use this template` button on home page of DjangoX repository.
-- Name your repo whatever you like.
-- Create a Django app of your choosing.
-- The specific functionality of the site is up to you but should have a model that makes use of `get_user_model`
+- create Django application from scratch that has a custom user model named `CustomUser`
+- Custom user should use *email* instead of *username* for signup / login
+- Application should work with Django Admin
 
 ## Implementation Notes
 
-DjangoX does not use poetry out of the box. So you'll need to look at the files DjangoX does use to see which dependencies are used.
-
-- View `Pipfile` and note the [packages] section.
-  - Use `poetry add` to install packages listed in Pipfile
-  - **NOTE:** Mac BigSur users may need to run extra command in case of installation errors.
-    - > export SYSTEM_VERSION_COMPAT=1
-- Delete the configuration files that aren't needed anymore since we're using Poetry
-  - Pipfile
-  - Pipfile.lock
-  - Dockerfile
-  - docker-compose.yml
-  - requirements.txt
+- Make sure to create custom user model **before** migrating data
 
 ### User Acceptance Tests
 
-- Verify that your pages  render as expected.
+- Verify the creation of a new user with email and password
+- Verify that duplicate emails are not allowed
 
 ## Configuration
 
-- Clone your newly created repo.
-- Use `poetry init -n` to initialize your project.
-- Add dependencies (see Implemetation Notes)
-- Remove unnecessary configuration files (see Implementation Notes)
+Use `poetry` to initialize `django-custom-user` project.
+
+```console
+> $ mkdir django-custom-user
+> $ cd django-custom-user
+> $ poetry init -n
+```
+
+Use the folder created by Poetry as the root of your project's git repository.
 
 Refer to [Lab Submission Instructions](../../../reference/submission-instructions/labs/){:target="_blank"} for detailed instructions.
 
 ## Stretch
 
-- Add social authentication.
-- Add images to your site.
+Create a Django application using [DjangoX](https://github.com/wsvincent/djangox){:target="_blank"}
