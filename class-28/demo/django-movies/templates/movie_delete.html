@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Delete a movie</h2>
+    <form action="" method="POST">
+        <!-- Add the model here -->
+        <!-- For security purposes -->
+        {% csrf_token %}
+        <p>Do you really want to delete {{ movie.name }}?</p>
+        <input type='submit' value='CONFIRM'>
+    </form>
+{% endblock content %}

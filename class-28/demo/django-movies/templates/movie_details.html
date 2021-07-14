@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Name: {{ movie.name }}</h3>
+    <h3>Desc: {{ movie.desc }}</h3>
+    <h3>Director: {{ movie.director }}</h3>
+    <h3>Watcher: {{ movie.watcher }}</h3>
+    <h3>Rank: {{ movie.rank }}</h3>
+    <a class="no-href" href="{% url 'movie_update' movie.pk %}"><button>Update</button></a>
+    <a href="{% url 'movie_delete' movie.pk %}"><button>Delete</button></a>
+{% endblock content %}

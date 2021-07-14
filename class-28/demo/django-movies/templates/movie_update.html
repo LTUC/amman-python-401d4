@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Update a movie</h2>
+    <form action="" method="POST">
+        <!-- Add the model here -->
+        <!-- For security purposes -->
+        {% csrf_token %} 
+        {{ form.as_p }}
+        <input type='submit' value='UPDATE'>
+    </form>
+{% endblock content %}
