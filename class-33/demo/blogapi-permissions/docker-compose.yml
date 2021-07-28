@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: gunicorn blogapi_project.wsgi:application --bind 0.0.0.0:8002 --workers 4
+    volumes:
+      - .:/code
+    ports:
+      - "8002:8002"
