@@ -45,8 +45,18 @@ class Graph:
             output += '\n'
         return output
 
-    def breadth_first(self, node):
-        pass
+
+def business_trip(graph, cities):
+    # Make a set of cities names
+    # Iterate over cities
+        # find city name in set of cities names O(1)(sets)
+        # if not found return null
+        # else:
+            # Loop on values of that key and find if next city in values
+                # yes: continue and add the edge value to the total
+                # no: return null
+
+    pass
 
 
 
